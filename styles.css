@@ -46,6 +46,11 @@
 /* ---------- Reset / base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Keep the [hidden] attribute authoritative: class rules that set an explicit
+   `display` (e.g. .form-success) would otherwise out-specify the UA default
+   and leave hidden panels visible. */
+[hidden] { display: none !important; }
+
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
